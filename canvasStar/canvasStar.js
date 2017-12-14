@@ -16,16 +16,16 @@
      *
      * */
     var config = {
-        star_r : 3,
-        star_alpha : 5,
-        initStarsPopulation : 150,
-        move_distance : 0.25,
+        star_r : 5,//star半径系数越大，半径越大
+        star_alpha : 10,//生成star的透明度，值越大，透明度越低
+        initStarsPopulation : 150,//初始化stars个数
+        move_distance : 0.25,//star位移的距离，数值越大，位移越大
         dot_r : 5,
         dot_speeds : 0.5,
         dot_alpha : 0.5,
-        dot_aReduction : 0.01,
-        dotsMinDist : 5,
-        maxDistFromCursor : 50,
+        dot_aReduction : 0.01,//dot消失条件，透明度小于aReduction时消失
+        dotsMinDist : 5,//dot最小距离
+        maxDistFromCursor : 50,//dot最大距离
     };
     var stars = [],
         dots = [],
@@ -59,8 +59,13 @@
         animate();
     };
 
-
-
+/** 
+ * [设置单个star]
+ * @param {[type]} id       [description]
+ * @param {[type]} x        [description]
+ * @param {[type]} y        [description]
+ * @param {[type]} useCache [description]
+ */
     function Star(id, x, y, useCache) {
         this.id = id;
         this.x = x;
